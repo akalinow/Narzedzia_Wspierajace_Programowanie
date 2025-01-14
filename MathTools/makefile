@@ -1,28 +1,29 @@
-Includes=-I/usr/include -I./includes
+Includes=$(shell gsl-config --cflags) -I./includes
+GSL_Libs=$(shell gsl-config --libs)
 CFlags=-std=c++17
-GSL_Libs=-L/usr/lib/x86_64-linux-gnu -lgsl -lgslcblas -lm
-TARGET=./bin/myCalcApp
+MYEXE=./bin/myCalcApp
 
-myCalcApp: Funkcja Wymierna Wielomian Gauss IntGauss MathTools
-	g++ $(CFlags) $(Includes) main.C -o $(TARGET) obj/*.o $(GSL_Libs)
+myCalcApp: obj/Funkcja.o obj/Wymierna.o obj/Wielomian.o \
+           obj/Gauss.o   obj/IntGauss.o obj/MathTools.o
+	g++ $(CFlags) $(Includes) main.C -o $(MYEXE) $^ $(GSL_Libs)
 
-Funkcja: includes/Funkcja.h src/Funkcja.C
+obj/Funkcja.o: src/Funkcja.C includes/Funkcja.h
 	g++ $(CFlags) $(Includes) -c src/Funkcja.C   -o obj/Funkcja.o
 
-Wymierna: includes/Wymierna.h src/Wymierna.C
+obj/Wymierna.o: src/Wymierna.C includes/Wymierna.h
 	g++ $(CFlags) $(Includes) -c src/Wymierna.C  -o obj/Wymierna.o
 
-Wielomian: includes/Wielomian.h src/Wielomian.C
+obj/Wielomian.o: src/Wielomian.C includes/Wielomian.h
 	g++ $(CFlags) $(Includes) -c src/Wielomian.C -o obj/Wielomian.o
 
-Gauss: includes/Gauss.h src/Gauss.C
+obj/Gauss.o: src/Gauss.C includes/Gauss.h
 	g++ $(CFlags) $(Includes) -c src/Gauss.C     -o obj/Gauss.o
 
-IntGauss: includes/IntGauss.h src/IntGauss.C
+obj/IntGauss.o: src/IntGauss.C includes/IntGauss.h
 	g++ $(CFlags) $(Includes) -c src/IntGauss.C  -o obj/IntGauss.o
 
-MathTools: includes/MathTools.h src/MathTools.C
+obj/MathTools.o: src/MathTools.C includes/MathTools.h
 	g++ $(CFlags) $(Includes) -c src/MathTools.C -o obj/MathTools.o
-	
+
 clean:
-	rm -f obj/*.o $(TARGET)
+	rm -f obj/*.o $(MYEXE)

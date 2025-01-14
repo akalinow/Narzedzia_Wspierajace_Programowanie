@@ -1,17 +1,17 @@
-GSL_Libs=$(shell gsl-config --libs)
 Includes=$(shell gsl-config --cflags) -I./includes
-CFlags=-std=c++17 
+GSL_Libs=$(shell gsl-config --libs)
+CXXFlags=-std=c++17
 
 SRCS=$(wildcard ./src/*.C)
 OBJS=$(patsubst ./src/%.C, ./obj/%.o, $(SRCS))
 
-TARGET=./bin/myCalcApp
+MYEXE=./bin/myCalcApp
 
 myCalcApp: $(OBJS)
-	g++ $(CFlags) $(Includes) main.C -o $(TARGET) ./obj/*.o $(GSL_Libs)
-	
-./obj/%.o: ./src/%.C ./includes/%.h
-	g++ $(CFlags) $(Includes) -c $< -o $@
+	g++ $(CXXFlags) $(Includes) main.C -o $(MYEXE) $^ $(GSL_Libs)
+
+./obj/%.o: src/%.C includes/%.h
+	g++ $(CXXFlags) $(Includes) -c $< -o $@
 
 clean:
 	rm -f $(OBJS) $(TARGET)
