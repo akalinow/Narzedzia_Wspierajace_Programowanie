@@ -1,0 +1,2 @@
+obj/Funkcja.o: src/Funkcja.C includes/Funkcja.h
+	g++ -std=c++17 -I./includes -c src/Funkcja.C   -o obj/Funkcja.o

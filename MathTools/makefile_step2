@@ -1,0 +1,8 @@
+All: obj/Funkcja.o obj/Wymierna.o
+	@echo Two classes compiled to object files in obj folder
+
+obj/Funkcja.o: src/Funkcja.C includes/Funkcja.h
+	g++ -std=c++17 -I./includes -c src/Funkcja.C   -o obj/Funkcja.o
+
+obj/Wymierna.o: src/Wymierna.C includes/Wymierna.h
+	g++ -std=c++17 -I./includes -c src/Wymierna.C  -o obj/Wymierna.o

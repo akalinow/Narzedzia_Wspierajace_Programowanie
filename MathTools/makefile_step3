@@ -1,0 +1,11 @@
+Includes=-I./includes
+CXXFlags=-std=c++17
+
+All: obj/Funkcja.o obj/Wymierna.o
+	@echo Two classes compiled to object files in obj folder
+
+obj/Funkcja.o: src/Funkcja.C includes/Funkcja.h
+	g++ $(CXXFlags) $(Includes)  -c $<  -o $@
+
+obj/Wymierna.o: src/Wymierna.C includes/Wymierna.h
+	g++ $(CXXFlags) $(Includes)  -c $<  -o $@
