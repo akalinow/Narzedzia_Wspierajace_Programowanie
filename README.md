@@ -9,6 +9,7 @@ git clone https://github.com/akalinow/Narzedzia_Wspierajace_Programowanie.git
 
 ## Update instructions
 ```Shell
+cd Narzedzia_Wspierajace_Programowanie
 git commit -a # <--- this will save all the modification made 
               #      to files tracked by the repository (optional)
 git stash     # <--- this will remove all modification to files 
