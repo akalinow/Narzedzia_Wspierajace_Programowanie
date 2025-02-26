@@ -19,13 +19,31 @@ git pull      # <--  this download the latest version of the repository
               #      your modifications and newer version fom github might occur
 ```
 
-## Environment setup (on pd0XX computers)
+## Environment setup 
+
+### On pd0XX computers
 
 ```Shell
 ssh pd0XX                        # Assume ssh configuration for given node is 
                                  # present.Jupyter opens at port 9000. 
                                  # Remember Adjust ssh config.
 ~akalinow/Publiczny/NWP/nwp_lecture.sif #Start the container
+source /opt/venv/bin/activate           #Setup Python virtual environment
+/opt/jupyter/start-jupyter.sh    #Start Jupyter server
+```
+
+### On private computer with Docker command line
+```Shell
+sudo docker run --name nwp_lecture --rm -e DISPLAY=$DISPLAY  -v /home/$USER:/scratch -v /tmp/.X11-unix:/tmp/.X11-unix:ro  -w /home/ubuntu -p 9000:9000 akalinow/nwp_lecture 
+source /opt/venv/bin/activate    #Setup Python virtual environment
+/opt/jupyter/start-jupyter.sh    #Start Jupyter server
+```
+
+```Shell
+mkdir %USERPROFILE%\Docker
+set WORKING_DIR=%USERPROFILE%\Docker
+docker pull akalinow/nwp_lecture
+docker run --name nwp_lecture -v %WORKING_DIR%:/scratch -w /home/ubuntu -p 9000:9000 akalinow/ml_lecture
 source /opt/venv/bin/activate           #Setup Python virtual environment
 /opt/jupyter/start-jupyter.sh    #Start Jupyter server
 ```
