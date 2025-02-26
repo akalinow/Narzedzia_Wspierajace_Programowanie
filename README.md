@@ -18,3 +18,14 @@ git pull      # <--  this download the latest version of the repository
               #      from the github. I yoy made a commit a conflicts between
               #      your modifications and newer version fom github might occur
 ```
+
+## Environment setup (on pd0XX computers)
+
+```Shell
+ssh pd0XX                        # Assume ssh configuration for given node is 
+                                 # present.Jupyter opens at port 9000. 
+                                 # Remember Adjust ssh config.
+~akalinow/Publiczny/NWP/nwp_lecture.sif #Start the container
+source /opt/venv/bin/activate           #Setup Python virtual environment
+/opt/jupyter/start-jupyter.sh    #Start Jupyter server
+```
