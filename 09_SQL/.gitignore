@@ -1,0 +1,17 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+# contains api keys
+.marimo.toml
+# other marimo stuff
+__marimo__/
+layouts/
+# don't want to check in data
+data/*
