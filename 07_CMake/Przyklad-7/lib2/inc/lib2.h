@@ -1,17 +1,13 @@
-#ifndef CLASS_B_H
-#define CLASS_B_H
-#include <iostream>
+#ifndef LIB2_H
+#define LIB2_H
 
 namespace CMakeExample
 {
-    class ClassB
+    class Lib2
     {
     public:
-        void B()
-        {
-            std::cout << "Klasa B" << std::endl;
-        }
+        void Print();
     };
 }
 
-#endif /* CLASS_B_H */
+#endif /* LIB2_H */

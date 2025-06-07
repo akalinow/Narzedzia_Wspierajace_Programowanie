@@ -1,13 +1,13 @@
-#ifndef CLASS_A_H
-#define CLASS_A_H
+#ifndef LIB1_H
+#define LIB1_H
 
 namespace CMakeExample
 {
-    class ClassA
+    class Lib1
     {
     public:
-        void A();
+        void Print();
     };
 }
 
-#endif /* CLASS_A_H */
+#endif /* LIB1_H */

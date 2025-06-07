@@ -1,9 +1,9 @@
-#include "class_a.h"
+#include "lib1.h"
 #include <iostream>
 
 using namespace CMakeExample;
 
-void ClassA::A()
+void Lib1::Print()
 {
-    std::cout << "Klasa A" << std::endl;
+    std::cout << "Biblioteka 1." << std::endl;
 }

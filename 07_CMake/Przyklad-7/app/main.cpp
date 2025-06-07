@@ -1,15 +1,19 @@
-#include "class_a.h"
-#include "class_b.h"
+#include "lib1.h"
+#include "lib2.h"
+#include "lib3.h"
 
 using namespace CMakeExample;
 
 int main()
 {
-    ClassA a;
-    a.A();
+    Lib1 a;
+    a.Print();
 
-    ClassB b;
-    b.B();
+    Lib2 b;
+    b.Print();
+
+    Lib3 c;
+    c.Print();
 
     return 0;
 }
