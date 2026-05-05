@@ -11,9 +11,9 @@
 # Identyfikator ten nie musi być zgodny z nazwą folderu, w którym znajduje
 # się podprojekt.
 
-# Nadajemy temu podprojektowi identyfikator p7lib2.
+# Nadajemy temu podprojektowi identyfikator p8lib2.
 
-project(p7lib2)
+project(p8lib2)
 
 
 ###############################################################################
@@ -21,7 +21,7 @@ project(p7lib2)
 ###############################################################################
 
 # Tworzymy cel - bibliotekę dynamiczną. Nadajemy mu identyfikator taki sam,
-# jak identyfikator podprojektu, czyli p7lib2. W tym celu, zamiast przepisywać
+# jak identyfikator podprojektu, czyli p8lib2. W tym celu, zamiast przepisywać
 # nazwę podprojektu, użyjemy tworzonej automatycznie zmiennej PROJECT_NAME.
 # Warto stosować tę zmienną w takich sytuacjach - dzięki temu unikniemy
 # na przykład literówki przy przepisywaniu identyfikatora podprojektu.
@@ -30,8 +30,8 @@ add_library(${PROJECT_NAME} SHARED
 )
 # Cel ten odpowiada bibliotece dynamicznej - patrz przykład 4.
 
-# Podkreślamy: wyrażenie ${PROJECT_NAME} ma wartość p7lib2, ponieważ w linii
-# 16. wywołaliśmy polecenie project właśnie z argumentem p7lib2.
+# Podkreślamy: wyrażenie ${PROJECT_NAME} ma wartość p8lib2, ponieważ w linii
+# 16. wywołaliśmy polecenie project właśnie z argumentem p8lib2.
 
 
 ###############################################################################
@@ -43,16 +43,16 @@ add_library(${PROJECT_NAME} SHARED
 # zamiast niego użyć aliasu. Obie "nazwy" celu, właściwy identyfikator oraz
 # alias, bedą przez CMake traktowane tak samo.
 
-# Poniższe polecenie utworzy alias p7::lib2 dla celu o identyfikatorze
-# p7lib2 (przechowywanym w zmiennej PROJECT_NAME - wyjaśnienie wyżej).
-add_library(p7::lib2 ALIAS ${PROJECT_NAME})
+# Poniższe polecenie utworzy alias p8::lib2 dla celu o identyfikatorze
+# p8lib2 (przechowywanym w zmiennej PROJECT_NAME - wyjaśnienie wyżej).
+add_library(p8::lib2 ALIAS ${PROJECT_NAME})
 
 # Po co tworzyć aliasy? Nie jest to konieczne, jednak może pomóc nam zapanować
 # nad projektem. Wygodnie jest odwoływać się do celu podprojektu zgodnie
 # z konwencją
 #    nazwa_glownego_projektu::nazwa_podprojektu
-# W naszym przypadku główny projekt nazywa się p7, natomiast podprojekt -
-# lib2, stąd alias celu to p7::lib2.
+# W naszym przypadku główny projekt nazywa się p8, natomiast podprojekt -
+# lib2, stąd alias celu to p8::lib2.
 
 
 ###############################################################################
@@ -64,7 +64,7 @@ add_library(p7::lib2 ALIAS ${PROJECT_NAME})
 
 # Zwrócimy tylko uwagę na to, że wykorzystujemy poniżej dwie zmienne tworzone
 # automatycznie przez CMake:
-# - PROJECT_NAME - nazwa podprojektu; tu: p7lib2 - jest to zarazem nazwa celu;
+# - PROJECT_NAME - nazwa podprojektu; tu: p8lib2 - jest to zarazem nazwa celu;
 #      zmienna ta została omówiona powyżej,
 # - PROJECT_SOURCE_DIR - folder źródłowy podprojektu, czyli folder zawierający
 #      plik CMakeList.txt podprojektu (a więc niniejszy plik); tu:

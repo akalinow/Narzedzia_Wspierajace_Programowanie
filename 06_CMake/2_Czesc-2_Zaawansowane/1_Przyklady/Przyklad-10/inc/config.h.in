@@ -1,0 +1,11 @@
+#ifndef __CONFIG_H__
+#define __CONFIG_H__
+
+// Odpowiada zmiennej CMake o nazwie ENABLE_FEATURE_Y.
+// Zwróć uwagę na użycie #cmakedefine zamiast #define.
+#cmakedefine ENABLE_FEATURE_Y
+
+// Odpowiada zmiennej CMake o nazwie VAR_2.
+#define VAR_2 "@VAR_2@"
+
+#endif // __CONFIG_H__
