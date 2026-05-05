@@ -2,12 +2,11 @@
 ## Temat: CMake
 ---
 
-### Ćwiczenie 2.
+### Ćwiczenie 3.
 
 W folderze `App_Shapes` znajdziesz kod źródłowy prostego projektu w języku C++.
 
-
-Umieść w nim, w odpowiednich miejscach struktury katalogów, jeden lub kilka
+Umieść w nim, w odpowiednich miejscach struktury , jeden lub kilka
 plików CMakeLists.txt w taki sposób, by projekt poprawnie budował się za pomocą CMake.
 W wyniku budowania projektu powinny powstać:
 • biblioteka dynamiczna shapes – na podstawie kodu źródłowego zawartego w
