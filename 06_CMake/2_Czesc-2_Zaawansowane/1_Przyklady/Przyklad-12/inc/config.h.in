@@ -1,0 +1,2 @@
+const char* GIT_VERSION = "@GIT_VERSION@";
+const char* PYTHON_VERSION = "@PYTHON_VERSION@";

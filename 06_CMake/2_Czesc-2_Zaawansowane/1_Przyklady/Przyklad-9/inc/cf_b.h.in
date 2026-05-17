@@ -1,0 +1,23 @@
+#ifndef __CF_B_H__
+#define __CF_B_H__
+
+/*****************************************************
+ * Szablon pliku cf_b.h
+ *****************************************************/
+
+// Wartości zmiennych zostaną wstawione przez CMake.
+// W tym pliku użyjemy notacji z @.
+
+// Wartość p9_VERSION będzie odczytywana w obu plikach nagłówkowych,
+// dlatego dodajemy do nazwy odpowiedniej zmiennej przyrostek "_B",
+// aby odróżnić zmienne utworzone w obu plikach nagłówkowych.
+const char* p9_version_B = "@p9_VERSION@";
+
+// Zmienna var2.
+const char* var2 = "@var2@";
+
+// Zmienna PROJECT_BINARY_DIR jest automatycznie definiowana przez CMake
+// i zawiera ścieżkę do folderu z wygenerowanymi plikami binarnymi.
+const char* project_binary_dir = "@PROJECT_BINARY_DIR@";
+
+#endif // __CF_B_H__

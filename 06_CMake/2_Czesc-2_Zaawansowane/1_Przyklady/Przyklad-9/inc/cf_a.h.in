@@ -1,0 +1,23 @@
+#ifndef __CF_A_H__
+#define __CF_A_H__
+
+/*****************************************************
+ * Szablon pliku cf_a.h
+ *****************************************************/
+
+// Wartości zmiennych zostaną wstawione przez CMake.
+// W tym pliku użyjemy notacji z $.
+
+// Wartość p9_VERSION będzie odczytywana w obu plikach nagłówkowych,
+// dlatego dodajemy do nazwy odpowiedniej zmiennej przyrostek "_A",
+// aby odróżnić zmienne utworzone w obu plikach nagłówkowych.
+const char* p9_version_A = "${p9_VERSION}";
+
+// Zmienna var1.
+const char* var1 = "${var1}";
+
+// Zmienna PROJECT_SOURCE_DIR jest automatycznie definiowana przez CMake
+// i zawiera ścieżkę do folderu z kodem źródłowym projektu.
+const char* project_source_dir = "${PROJECT_SOURCE_DIR}";
+
+#endif // __CF_A_H__
