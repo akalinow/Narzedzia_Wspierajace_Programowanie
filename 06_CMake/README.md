@@ -12,6 +12,6 @@
 ### Zobacz też
 
 * [CMake - oficjalne materiały szkoleniowe](https://cmake.org/getting-started/ "CMake - oficjalne materiały szkoleniowe"), w tym:
-  - [oficjalny przewodnik](https://cmake.org/getting-started/ "CMake - oficjalny przewodnik"),
-  - [dokumentacja](https://cmake.org/getting-started/ "CMake - dokumentacja"),
+  - [oficjalny przewodnik](https://cmake.org/cmake/help/latest/guide/tutorial/index.html "CMake - oficjalny przewodnik"),
+  - [dokumentacja](https://cmake.org/cmake/help/latest/ "CMake - dokumentacja"),
 * [Awesome CMake](https://github.com/onqtam/awesome-cmake "Awesome CMake").
