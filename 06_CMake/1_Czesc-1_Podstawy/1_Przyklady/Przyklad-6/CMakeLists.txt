@@ -1,6 +1,6 @@
-# Przykład 6. Flagi kompilatora.
+# Przykład 6. Zależności zewnętrzne.
 
-# Przykład ten omawia sposoby określania flag kompilatora.
+# W tym przykładzie dodamy do projektu zewnętrzną zależność - biblioteki Boost.
 
 
 cmake_minimum_required(VERSION 3.15)
@@ -12,9 +12,14 @@ project(p6
 
 ###############################################################################
 
-# Sposób I - niezalecany. Domyślne flagi kompilatora.
-# Ustawiamy flagę FLAG1 dla wszystkich celów w projekcie.
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DFLAG1" CACHE STRING "Set C++ Compiler Flags" FORCE)
+# Dołączamy biblioteki filesystem i system z pakietu Boost.
+find_package(Boost 1.46.1 REQUIRED COMPONENTS filesystem system)
+
+if(Boost_FOUND)
+    message("Biblioteki Boost dołączone!")
+else()
+    message(FATAL_ERROR "Nie można odnaleźć bibliotek Boost!")
+endif()
 
 ###############################################################################
 
@@ -22,9 +27,8 @@ add_executable(p6e
     main.cpp
 )
 
-# Sposób II - zalecany. Flaga kompilatora dla konkretnego celu.
-# Ustawiamy flagę FLAG3 dla celu p6e.
-target_compile_definitions(p6e 
+# Dołączamy biblioteki Boost do celu p6e.
+target_link_libraries(p6e
     PRIVATE
-        FLAG3
+        Boost::filesystem
 )

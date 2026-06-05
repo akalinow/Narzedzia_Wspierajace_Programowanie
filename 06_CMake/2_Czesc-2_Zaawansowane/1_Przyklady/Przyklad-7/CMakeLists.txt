@@ -1,13 +1,6 @@
-# Przykład 7. Biblioteka INTERFACE (tylko pliki nagłówkowe).
+# Przykład 7. Flagi kompilatora.
 
-# W tym przykładzie część programu zostanie wydzielona w postaci biblioteki
-# szczególnego typu, określanej w CMake słowem kluczowym INTERFACE.
-# Kod żródłowy biblioteki składa się wyłącznie z plików nagłówkowych, nie ma
-# w nim żadnych plików z "właściwym" kodem (np. plików z rozszerzeniem .cpp).
-# Tworząc cel odpowiadający takiej bibliotece należy użyć właśnie słowa kluczowego
-# INTERFACE. W czasie budowania projektu biblioteka taka nie powstawnie jako
-# osobny byt, będzie przez CMake traktowana po prostu jako zbiór dodatkowych
-# plików nagłówkowych.
+# Przykład ten omawia sposoby określania flag kompilatora.
 
 
 cmake_minimum_required(VERSION 3.15)
@@ -17,41 +10,21 @@ project(p7
     DESCRIPTION "Przykład 7."
     LANGUAGES CXX)
 
-
-###############################################################################
-# Cel 1. Biblioteka INTERFACE
 ###############################################################################
 
-# Tworzymy cel - bibliotekę INTERFACE. Nadajemy mu identyfikator p7lib.
-add_library(p7lib INTERFACE)
-# Cel ten odpowiada bibliotece zbudowanej wyłącznie z plików nagłówkowych,
-# dlatego nie wymieniamy tu plików źródłowych.
-
-# Dokumentacja:
-#   https://cmake.org/cmake/help/latest/command/add_library.html
-
-# Określamy folder, który zawiera pliki nagłówkowe dla celu p7lib.
-target_include_directories(p7lib
-    INTERFACE
-        ${PROJECT_SOURCE_DIR}/inc
-)
-
-target_compile_features(p7lib INTERFACE cxx_std_20)
-
+# Sposób I - niezalecany. Domyślne flagi kompilatora.
+# Ustawiamy flagę FLAG1 dla wszystkich celów w projekcie.
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DFLAG1" CACHE STRING "Set C++ Compiler Flags" FORCE)
 
 ###############################################################################
-# Cel 2. Plik wykonywalny
-###############################################################################
 
-# Dodajemy cel - plik wykonywalny p7e.
 add_executable(p7e
-    src/main.cpp
+    main.cpp
 )
 
-# Dołączamy bibliotekę p7lib do pliku wykonywalnego p7e.
-target_link_libraries(p7e
-    PRIVATE 
-        p7lib
+# Sposób II - zalecany. Flaga kompilatora dla konkretnego celu.
+# Ustawiamy flagę FLAG3 dla celu p7e.
+target_compile_definitions(p7e 
+    PRIVATE
+        FLAG3
 )
-
-target_compile_features(p7e PRIVATE cxx_std_20)

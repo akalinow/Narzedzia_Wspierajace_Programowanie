@@ -1,7 +1,7 @@
 # Przykład 12. Moduły.
 
-# W tym przykładzie nauczymy się tworzyć moduły CMake, czyli skrypty,
-#które definiują funkcje i makra, które można wykorzystać w innych
+# W tym przykładzie nauczymy się tworzyć moduły CMake, czyli skrypty
+# definiujące funkcje i makra, które można wykorzystać w innych
 # skryptach CMake. Moduły są bardzo przydatne do organizowania kodu
 # CMake i ponownego wykorzystywania go w różnych projektach.
 
@@ -26,6 +26,7 @@ message(STATUS "Opis: ${PROJECT_DESCRIPTION}")
 message(STATUS "Standard C++: ${CMAKE_CXX_STANDARD}")
 message(STATUS "System: ${CMAKE_SYSTEM_NAME}")
 
+
 ###############################################################################
 # Używamy modułów
 ###############################################################################
@@ -33,7 +34,6 @@ message(STATUS "System: ${CMAKE_SYSTEM_NAME}")
 include(cmake/safeguards.cmake)
 
 include(cmake/git_version.cmake)
-include(cmake/python_version.cmake)
 
 
 ###############################################################################

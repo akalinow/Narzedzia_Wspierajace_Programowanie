@@ -9,7 +9,7 @@
 ###############################################################################
 
 # Niniejszy projekt ma dwa cele. W wyniku jego kompilacji mają powstać:
-# biblioteka lib oraz aplikacja (plik wykonywalny) app. # Podzielimy zatem
+# biblioteka lib oraz aplikacja (plik wykonywalny) app. Podzielimy zatem
 # projekt na dwa podprojekty - każdy będzie odpowiadał jednemu z celów.
 
 # To jest główny plik CMakeLists.txt całego projektu, opisuje zatem własności

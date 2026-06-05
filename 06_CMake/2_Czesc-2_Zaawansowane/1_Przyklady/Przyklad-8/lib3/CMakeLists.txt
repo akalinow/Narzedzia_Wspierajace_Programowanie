@@ -27,7 +27,7 @@ project(p8lib3)
 # na przykład literówki przy przepisywaniu identyfikatora podprojektu.
 add_library(${PROJECT_NAME} INTERFACE)
 # Cel ten odpowiada bibliotece zbudowanej wyłącznie z plików nagłówkowych
-# - patrz przykład 7.; dlatego nie wymieniamy tu plików źródłowych.
+# - patrz przykład 5.; dlatego nie wymieniamy tu plików źródłowych.
 
 # Podkreślamy: wyrażenie ${PROJECT_NAME} ma wartość p8lib3, ponieważ w linii
 # 23. wywołaliśmy polecenie project właśnie z argumentem p8lib3.
