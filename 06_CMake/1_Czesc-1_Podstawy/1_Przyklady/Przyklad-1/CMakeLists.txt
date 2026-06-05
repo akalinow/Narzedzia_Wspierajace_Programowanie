@@ -1,4 +1,4 @@
-# Przykład 1. Podstawy.
+# Przykład 1. Najprostszy projekt.
 
 # Przykład ten zawiera minimalny zestaw elementów, które muszą się znaleźć
 # w każdym projekcie CMake (oraz jeden dodatkowy, ale pożyteczny).

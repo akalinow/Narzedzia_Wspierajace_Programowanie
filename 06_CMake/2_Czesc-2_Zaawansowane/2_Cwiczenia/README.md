@@ -1,6 +1,11 @@
 # Narzędzia wspierające programowanie
 ## Temat: CMake
 
+### Część 2. Zagadnienia zaawansowane
+### Ćwiczenia
+
+---
+
 ### Ćwiczenie 3.
 
 W folderze `App_Shapes` znajdziesz kod źródłowy prostego projektu w języku C++. Umieść w nim, w odpowiednich miejscach struktury folderów, pliki `CMakeLists.txt` w taki sposób, by projekt poprawnie budował się za pomocą CMake.

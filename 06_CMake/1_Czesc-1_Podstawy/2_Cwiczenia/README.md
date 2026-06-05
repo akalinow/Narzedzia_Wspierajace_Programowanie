@@ -1,6 +1,11 @@
 # Narzędzia wspierające programowanie
 ## Temat: CMake
 
+### Część 1. Podstawy
+### Ćwiczenia
+
+---
+
 ### Ćwiczenie 1.
 
 Napisz plik `CMakeLists.txt` dla projektu z folderu `App_Example`. W wyniku budowania projektu powinny powstać:
